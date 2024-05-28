@@ -466,10 +466,10 @@ function moveArrayBuilder(moveData) {
 			tempArray.push(transArray[j+1]);
 		}
 		moveArray.push(tempArray);
+		console.log(moveArray);
 	}
-	console.log(moveArray);
-	console.dir(moveArray);
 	canRun = true;
+	console.dir(moveArray);
 }
 
 //=======================================================================
@@ -595,4 +595,5 @@ function testFunction(output){
 		.then(data => {
 			moveArrayBuilder(data)
 		});
+		
 }
