@@ -441,6 +441,7 @@ function parseMotionData() {
 	fileReader.onload = function() {
 		var moveData = event.target.result;
 		moveArrayBuilder(moveData);
+		console.log(moveArray);
 		console.dir(moveArray);
 	}
 }
