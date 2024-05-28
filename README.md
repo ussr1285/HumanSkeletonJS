@@ -1,5 +1,7 @@
 #Live Demo: https://skeleton.michaelsault.ca/
 
+[my test demo](https://ussr1285.github.io/HumanSkeletonJS/)
+
 # HumanSkeletonJS
 A javascript version of my human skeleton motion data display.
 

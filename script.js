@@ -441,8 +441,6 @@ function parseMotionData() {
 	fileReader.onload = function() {
 		var moveData = event.target.result;
 		moveArrayBuilder(moveData);
-		console.log(moveArray);
-		console.dir(moveArray);
 	}
 }
 
@@ -469,7 +467,8 @@ function moveArrayBuilder(moveData) {
 		}
 		moveArray.push(tempArray);
 	}
-
+	console.log(moveArray);
+	console.dir(moveArray);
 	canRun = true;
 }
 
