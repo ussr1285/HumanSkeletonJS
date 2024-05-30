@@ -445,31 +445,10 @@ function parseMotionData() {
 }
 
 function moveArrayBuilder(moveData) {
-	var test = moveData.split('\n');
-
-	//split by line and then find where the datapoints start
-	for (var i = 0; i < test.length; i++) {
-		if (test[i] == 'MOTION') {
-			var start = i + 3;
-			var frames = test[i+1].split(' ');
-			frameNum = frames[1];
-			break;
-		}
-	}
-
-	for (var k = 0; k < (test.length)-start; k++) {
-		var transArray = test[start+k].split(' ');
-		var tranSize = 78;
-		var tempArray = [];
-
-		for (var j = 0; j < tranSize; j++) {
-			tempArray.push(transArray[j+1]);
-		}
-		moveArray.push(tempArray);
-		// console.log(moveArray);
-	}
+	moveArray = moveData;
+    frameNum = moveArray.length;
 	canRun = true;
-	console.log(moveArray);
+	testDownData = moveArray;
 }
 
 //=======================================================================
@@ -590,10 +569,8 @@ function testFunction(output){
 
 	canRun = false;
 	
-	fetch(output)
-		.then(response => response.text())
-		.then(data => {
-			moveArrayBuilder(data)
-		});
+    // fetch 대신 get_bvh 함수 사용
+    const data = get_bvh(output);
+    moveArrayBuilder(data);
 		
 }
